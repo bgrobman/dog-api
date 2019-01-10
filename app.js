@@ -1,4 +1,6 @@
 
+
+
 const card = document.querySelectorAll('.card');
 const cardTitle = document.querySelectorAll('.card-title');
 const sr = document.querySelectorAll('#search');
@@ -19,6 +21,7 @@ var html = '<select>' ;
 
  $('#search').html(html +  '</select>');
 }
+
 function getImg(data,element,cl){
   var img = document.createElement('div');
   img.innerHTML = (`<img class='${cl}' src='${data}' alt="Image of the dog">`);
@@ -34,25 +37,26 @@ function getImg(data,element,cl){
         });
  }
 
-
-
 getData('https://dog.ceo/api/breeds/list')
 .then(data => generateOptions(data.message));
 
 
 //random img
-for(let i = 0 ; i < 3; i ++){
+
   getData('https://dog.ceo/api/breeds/image/random')
   .then(data => data.message)
   .then( (data) => {
-   getImg(data , $('#random'),'img-fluid-random');
+   getImg(data , $('#random'),'img-fluid-random mt-2');
   });
-}
-
 
 // select img
 getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
 .then(data => data.message)
 .then( (data) => {
  getImg(data , search,'img-fluid-random');
+});
+
+
+$(document).ready(function(){
+ $('#random').hide().delay(3000).slideDown(5000);
 });
