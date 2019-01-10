@@ -7,6 +7,12 @@ html {
   color:red;
 }
 
+  .img-fluid-random{
+  width:25%;
+
+}
+
+
 
 @include media-breakpoint-up(sm) {
   html {
