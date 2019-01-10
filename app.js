@@ -22,9 +22,10 @@ var html = '<select>' ;
  $('#search').html(html +  '</select>');
 }
 
-function getImg(data,element,cl){
+function getImg(data,element,cl,dis){
   var img = document.createElement('div');
   img.innerHTML = (`<img class='${cl}' src='${data}' alt="Image of the dog">`);
+  img.setAttribute("class", dis)
   element.prepend(img);
 }
 
@@ -42,22 +43,23 @@ getData('https://dog.ceo/api/breeds/list')
 
 
 //random img
-
+for(let i = 0; i < 3 ; i += 1){
   getData('https://dog.ceo/api/breeds/image/random')
   .then(data => data.message)
   .then( (data) => {
-   getImg(data , $('#random'),'img-fluid-random mt-2');
+   getImg(data , $('#random'),'img-fluid','col-lg-4');
   });
+}
 
 // select img
 
 getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
 .then(data => data.message)
 .then( (data) => {
- getImg(data , search,'img-fluid-random');
+ getImg(data , search,'img-fluid');
 });
 
 
-$(document).ready(function(){
- $('#random').hide().delay(3000).slideDown(5000);
-});
+// $(document).ready(function(){
+//  $('#random').hide().delay(3000).slideDown(5000);
+// });
