@@ -50,6 +50,7 @@ getData('https://dog.ceo/api/breeds/list')
   });
 
 // select img
+
 getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
 .then(data => data.message)
 .then( (data) => {
