@@ -22,10 +22,10 @@ var html = '<select>' ;
  $('#search').html(html +  '</select><button type="button" class="btn btn-primary" id="list-image">Search Image  Of Selected Breed</button>');
 }
 
-function getImg(data,element,cl,dis){
+function getImg(data,element,cl,divClass){
   var img = document.createElement('div');
   img.innerHTML = (`<img class='${cl}' src='${data}' alt="Image of the dog">`);
-  img.setAttribute("class", dis)
+  img.setAttribute("class", divClass)
   element.prepend(img);
 }
 
@@ -47,7 +47,7 @@ for(let i = 0; i < 3 ; i += 1){
   getData('https://dog.ceo/api/breeds/image/random')
   .then(data => data.message)
   .then( (data) => {
-   getImg(data , $('#random'),'img-fluid','col-lg-4');
+   getImg(data , $('#random'),'img-fluid','col-sm-4');
   });
 }
 
@@ -69,3 +69,13 @@ for(let i = 0; i < 3 ; i += 1){
 // $(document).ready(function(){
 //  $('#random').hide().delay(3000).slideDown(5000);
 // });
+
+
+
+
+// function getImg(data,element,cl,divClass,method){
+//   var img = document.createElement('div');
+//   img.innerHTML = (`<img class='${cl}' src='${data}' alt="Image of the dog">`);
+//   img.setAttribute("class", divClass)
+//   element.method(img);
+// }
