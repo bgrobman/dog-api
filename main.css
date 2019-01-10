@@ -7,12 +7,18 @@ html {
   color:red;
 }
 
+.card{
+  margin-bottom: : 20px;
+}
   /* .img-fluid-random{
   width:25%;
 
 } */
 
+select{
+margin-right: 10px;
 
+}
 
 @include media-breakpoint-up(sm) {
   html {

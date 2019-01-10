@@ -19,7 +19,7 @@ var html = '<select>' ;
       html += '<option value=' + value +'>' + value +'</option>';
   })
 
- $('#search').html(html +  '</select>');
+ $('#search').html(html +  '</select><button type="button" class="btn btn-primary" id="list-image">Search Image  Of Selected Breed</button>');
 }
 
 function getImg(data,element,cl,dis){
@@ -51,13 +51,19 @@ for(let i = 0; i < 3 ; i += 1){
   });
 }
 
-// select img
+//select img
+// $('#list-image').on( 'click', function() {
+//   $('#random').hide();
+//   for(let i = 0; i < 3 ; i +=1){
+//     getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
+//     .then(data => data.message)
+//     .then( (data) => {
+//      getImg(data , $('#random2'),'img-fluid','col-lg-4');
+//     });
+//   }
+//   $('#random').show();
+// });
 
-getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
-.then(data => data.message)
-.then( (data) => {
- getImg(data , search,'img-fluid');
-});
 
 
 // $(document).ready(function(){
