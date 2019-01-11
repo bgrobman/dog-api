@@ -1,9 +1,8 @@
 
-
-
 const card = document.querySelectorAll('.card');
 const cardTitle = document.querySelectorAll('.card-title');
 const sr = document.querySelectorAll('#search');
+const random = document.querySelectorAll('#random');
 
 function getData(url){
 return  fetch(url)
@@ -51,16 +50,23 @@ for(let i = 0; i < 3 ; i += 1){
   });
 }
 
-//select img
+
+
+     //select img
 // $('#list-image').on( 'click', function() {
 //   $('#random').hide();
+//   var html;
 //   for(let i = 0; i < 3 ; i +=1){
 //     getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
 //     .then(data => data.message)
 //     .then( (data) => {
-//      getImg(data , $('#random2'),'img-fluid','col-lg-4');
+//       var img = document.createElement('div');
+//       img.innerHTML = (`<img class='${'img-fluid'}' src='${data}' alt="Image of the dog">`);
+//       img.setAttribute('class', 'col-sm-4');
+//       html += img;
 //     });
 //   }
+//   $('#random').html(html);
 //   $('#random').show();
 // });
 
