@@ -3,6 +3,8 @@ const card = document.querySelectorAll('.card');
 const cardTitle = document.querySelectorAll('.card-title');
 const sr = document.querySelectorAll('#search');
 const random = document.querySelectorAll('#random');
+// const listImg = document.querySelectorAll('#list-image');
+const listImg = document.querySelectorAll('#list-img');
 
 function getData(url){
 return  fetch(url)
@@ -18,7 +20,7 @@ var html = '<select>' ;
       html += '<option value=' + value +'>' + value +'</option>';
   })
 
- $('#search').html(html +  '</select><button type="button" class="btn btn-primary" id="list-image">Search Image  Of Selected Breed</button>');
+ $('#search').html(html +  '</select>');
 }
 
 function getImg(data,element,cl,divClass){
@@ -53,23 +55,24 @@ for(let i = 0; i < 3 ; i += 1){
 
 
      //select img
-// $('#list-image').on( 'click', function() {
-//   $('#random').hide();
-//   var html;
-//   for(let i = 0; i < 3 ; i +=1){
-//     getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
-//     .then(data => data.message)
-//     .then( (data) => {
-//       var img = document.createElement('div');
-//       img.innerHTML = (`<img class='${'img-fluid'}' src='${data}' alt="Image of the dog">`);
-//       img.setAttribute('class', 'col-sm-4');
-//       html += img;
-//     });
-//   }
-//   $('#random').html(html);
-//   $('#random').show();
-// });
-
+search.addEventListener("click", function(){
+//$('#list-image').on( 'click', function() {
+  // $('#random').hide();
+  // var html;
+  // for(let i = 0; i < 3 ; i += 1){
+  //   getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
+  //   .then(data => data.message)
+  //   .then( (data) => {
+  //     var img = document.createElement('div');
+  //     img.innerHTML = (`<img class='${'img-fluid'}' src='${data}' alt="Image of the dog">`);
+  //     img.setAttribute('class', 'col-sm-4');
+  //     html += img;
+  //   });
+  // }
+  // random.innerHTML = html;
+  // $('#random').show();
+//});
+alert('hello')});
 
 
 // $(document).ready(function(){
