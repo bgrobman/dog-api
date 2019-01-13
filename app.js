@@ -66,7 +66,7 @@ for(let i = 0; i < 3 ; i += 1){
      getImg(data , $('#random'),'img-fluid remove mb-3','col-sm-4 remove');
     });
   }
-
+ $('#random').hide().delay(3000).slideDown(5000);
  });
 
 
