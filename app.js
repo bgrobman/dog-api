@@ -4,7 +4,9 @@ const cardTitle = document.querySelectorAll('.card-title');
 const sr = document.querySelectorAll('#search');
 const random = document.querySelectorAll('#random');
 // const listImg = document.querySelectorAll('#list-image');
-const listImg = document.querySelectorAll('#list-img');
+const remove = document.getElementsByClassName('remove');
+const listImg = document.getElementById('list-img');
+
 
 function getData(url){
 return  fetch(url)
@@ -43,48 +45,33 @@ getData('https://dog.ceo/api/breeds/list')
 .then(data => generateOptions(data.message));
 
 
-//random img
+//random img generator
 for(let i = 0; i < 3 ; i += 1){
   getData('https://dog.ceo/api/breeds/image/random')
   .then(data => data.message)
   .then( (data) => {
-   getImg(data , $('#random'),'img-fluid','col-sm-4');
+   getImg(data , $('#random'),'img-fluid remove mb-3','col-sm-4 remove');
   });
 }
 
 
 
      //select img
-search.addEventListener("click", function(){
-//$('#list-image').on( 'click', function() {
-  // $('#random').hide();
-  // var html;
-  // for(let i = 0; i < 3 ; i += 1){
-  //   getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
-  //   .then(data => data.message)
-  //   .then( (data) => {
-  //     var img = document.createElement('div');
-  //     img.innerHTML = (`<img class='${'img-fluid'}' src='${data}' alt="Image of the dog">`);
-  //     img.setAttribute('class', 'col-sm-4');
-  //     html += img;
-  //   });
-  // }
-  // random.innerHTML = html;
-  // $('#random').show();
-//});
-alert('hello')});
+ listImg.addEventListener("click", function(){
+   $('.remove').remove();
+  for(let i = 0; i < 3 ; i += 1){
+    getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
+    .then(data => data.message)
+    .then( (data) => {
+     getImg(data , $('#random'),'img-fluid remove mb-3','col-sm-4 remove');
+    });
+  }
 
+ });
+
+
+// $('#random').hide().delay(3000).slideDown(5000);
 
 // $(document).ready(function(){
 //  $('#random').hide().delay(3000).slideDown(5000);
-// });
-
-
-
-
-// function getImg(data,element,cl,divClass,method){
-//   var img = document.createElement('div');
-//   img.innerHTML = (`<img class='${cl}' src='${data}' alt="Image of the dog">`);
-//   img.setAttribute("class", divClass)
-//   element.method(img);
-// }
+// //});
