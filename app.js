@@ -17,7 +17,7 @@ return  fetch(url)
 }
 
 function generateOptions(data) {
-var html = '<select>' ;
+var html = '<select class="custom-select" id="inputGroupSelect04">' ;
   var  op =  $.each(data,function( key, value ) {
       html += '<option value=' + value +'>' + value +'</option>';
   })
@@ -55,7 +55,7 @@ for(let i = 0; i < 3 ; i += 1){
 }
 
 
-
+//$('#random').hide().delay(2000).slideDown(5000);
      //select img
  listImg.addEventListener("click", function(){
    $('.remove').remove();
@@ -63,10 +63,10 @@ for(let i = 0; i < 3 ; i += 1){
     getData(`https://dog.ceo/api/breed/${$('select').val()}/images/random`)
     .then(data => data.message)
     .then( (data) => {
-     getImg(data , $('#random'),'img-fluid remove mb-3','col-sm-4 remove');
+     getImg(data , $('#random'),'img-fluid mb-3','col-sm-4 remove');
     });
   }
- $('#random').hide().delay(3000).slideDown(5000);
+ $('#random').hide().delay(500).slideDown(3000);
  });
 
 
