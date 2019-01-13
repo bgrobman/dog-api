@@ -3,7 +3,11 @@ html {
 }
 
 body{
+}
 
+.footer{
+  background: lightgray;
+  max-width:100%;
 }
 
 header{
@@ -16,7 +20,7 @@ header{
   top: 0;
   /* left: 0; */
   /* width: 100%;
-  /* z-index: 100; */ 
+  /* z-index: 100; */
 }
 
 .card{
