@@ -18,9 +18,9 @@ header{
   width: 100% */
   /* position:fixed;
   top: 0;
-  /* left: 0; */
-  /* width: 100%;
-  /* z-index: 100; */
+   left: 0;
+   width: 100%;
+   z-index: 100; */
 }
 
 .card{
@@ -37,6 +37,10 @@ img{
 select{
 margin-right: 10px;
 
+}
+
+#body{
+  /* margin-top:148px; */
 }
 
 @include media-breakpoint-up(sm) {
